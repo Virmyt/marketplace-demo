@@ -1,0 +1,8 @@
+.example-card {
+    width: 200px;
+}
+
+.example-header-image {
+    background-image: url('/src/assets/images/products/food.jpg');
+    background-size: cover;
+}

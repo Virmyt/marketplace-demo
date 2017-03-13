@@ -1,0 +1,21 @@
+.app-layout {
+    background-color: #fafafa;
+}
+
+.backend-grid {
+    overflow: scroll;
+}
+.seller-grid {
+    overflow: scroll;
+
+}
+.seller-grid .figure {
+    align-items: baseline;
+}
+.mobile-grid .figure {
+    align-items: baseline;
+}
+
+.mobile-grid {
+    overflow: scroll;
+}

@@ -1,0 +1,17 @@
+.seller-product-list{
+    background-color: aliceblue;
+}
+.seller-layout-grid {
+    display: flex;
+    width: 800px;
+}
+
+.seller-product-list{
+    flex: 30;
+}
+.seller-selected-product{
+    flex: 30;
+}
+.seller-edit-product {
+    flex: 40;
+}
