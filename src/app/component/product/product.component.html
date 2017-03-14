@@ -1,24 +1,52 @@
-<div *ngIf="edit">
-  <md-input-container>
-    <input mdInput placeholder="name of product" value="{{product.name}}">
-  </md-input-container>
+<div *ngIf="edit" layout="column">
+
+    <md-input-container class="full-width">
+        <input mdInput placeholder="Name" [(ngModel)]="product.name" name="name">
+    </md-input-container>
+    <md-input-container class="full-width">
+        <input mdInput placeholder="Price" [(ngModel)]="product.price">
+    </md-input-container>
+
+    <img width="70px" height="70px" alt="" src="{{product.image}}" /> <md-select [(ngModel)]="product.image">
+        <md-option [value]="image" *ngFor="let image of getImages()">
+            <!--<img src="{{ image }}" />-->
+            <div layout="row" style="width:70px;height:70px;margin-left:10px;padding-top:5px;">
+                <img width="70px" height="70px" alt="" src="{{image}}" />
+                <span flex></span>
+            </div>
+        </md-option>
+    </md-select>
+
+    <md-input-container>
+        <input mdInput placeholder="State" [mdAutocomplete]="auto" [(ngModel)]="product.type">
+    </md-input-container>
+
+    <md-autocomplete #auto="mdAutocomplete">
+        <md-option *ngFor="let type of getTypes()" [value]="type">
+            {{ type }}
+        </md-option>
+    </md-autocomplete>
+
+    <button md-button (click)="saveProduct(product)">SAVE</button>
+
+
 </div>
 <div *ngIf="!edit">
-  <md-card class="example-card">
-    <md-card-header>
-      <div md-card-avatar class="example-header-image"></div>
-      <md-card-title>Shiba Inu</md-card-title>
-      <md-card-subtitle>Dog Breed</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="/src/assets/images/products/food.jpg">
-    <md-card-content>
-      <p>
-        Description
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <button md-button>LIKE</button>
-      <button md-button>SHARE</button>
-    </md-card-actions>
-  </md-card>
+    <md-card class="example-card">
+        <md-card-header>
+            <div md-card-avatar class="example-header-image"></div>
+            <md-card-title>{{ product.name }}</md-card-title>
+            <md-card-subtitle>{{ product.type }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{product.image}}">
+        <md-card-content>
+            <p>
+                Description for product {{product.name}}
+            </p>
+            <h4>Price: {{product.price | currency}}</h4>
+        </md-card-content>
+        <md-card-actions>
+            <button md-button (click)="editProduct(product)">EDIT</button>
+        </md-card-actions>
+    </md-card>
 </div>

@@ -11,7 +11,7 @@ import {Product} from "../../entity/product";
 export class SellerComponent implements OnInit {
 
   product: Product = null;
-  productSelected: boolean = false;
+  edit: boolean = false;
   constructor(
       private productProvider: ProductProviderService
   ) { }
@@ -21,10 +21,19 @@ export class SellerComponent implements OnInit {
 
   getProducts = (): Product[] => this.productProvider.products;
 
+
+  selectProduct = (product: Product) => {
+    this.product = product;
+  };
+  addProduct = () => {
+    this.product = new Product();
+    this.edit = true;
+  };
+
   editProduct = (product: Product) => {
     // this.product = this.productProvider.products.find((product: Product) => product.name === name);
     this.product = product;
-    this.productSelected = true;
+    this.edit = true;
   };
 
   newProduct = () => this.product = new Product();

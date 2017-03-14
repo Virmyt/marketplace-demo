@@ -18,3 +18,6 @@ md-grid-list .grid-container{
 }
 
 
+.cdk-overlay-container {
+    position: absolute;
+}

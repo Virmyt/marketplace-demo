@@ -6,3 +6,7 @@
     background-image: url('/src/assets/images/products/food.jpg');
     background-size: cover;
 }
+
+.full-width {
+    width: 100%;
+}

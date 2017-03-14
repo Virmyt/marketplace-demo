@@ -10,7 +10,9 @@ import {ProductProviderService} from "../../service/product-provider.service";
 export class ProductComponent implements OnInit {
 
   @Input() product: Product = new Product();
-  @Input() edit: boolean = false;
+
+  edit: boolean = false;
+  @Input() isNew: boolean = false;
 
   constructor(
       private productProvider: ProductProviderService
@@ -19,10 +21,19 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  editProduct = (name: string) => {
-    this.product = this.productProvider.products.find((product: Product) => product.name === name);
+  editProduct = (product: Product) => {
+    this.product = product;
+    this.edit = true;
+  };
+  saveProduct = (product: Product) => {
+    this.product = product;
+    this.productProvider.saveProduct(product);
+    this.edit = false
   };
 
+  getTypes = (): string[] => this.productProvider.types;
+
+  getImages = () => this.productProvider.getImages();
   newProduct = () => this.product = new Product();
 
 }
