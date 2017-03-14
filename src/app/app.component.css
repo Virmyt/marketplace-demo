@@ -9,13 +9,12 @@
     overflow: scroll;
 
 }
-.seller-grid .figure {
-    align-items: baseline;
-}
-.mobile-grid .figure {
-    align-items: baseline;
+md-grid-list .grid-container{
+    align-self: flex-start;
 }
 
 .mobile-grid {
     overflow: scroll;
 }
+
+

@@ -10,7 +10,7 @@ import {Product} from "../../entity/product";
 })
 export class SellerComponent implements OnInit {
 
-  product: Product;
+  product: Product = null;
   productSelected: boolean = false;
   constructor(
       private productProvider: ProductProviderService
@@ -21,8 +21,9 @@ export class SellerComponent implements OnInit {
 
   getProducts = (): Product[] => this.productProvider.products;
 
-  editProduct = (name: string) => {
-    this.product = this.productProvider.products.find((product: Product) => product.name === name);
+  editProduct = (product: Product) => {
+    // this.product = this.productProvider.products.find((product: Product) => product.name === name);
+    this.product = product;
     this.productSelected = true;
   };
 

@@ -1,33 +1,29 @@
 <div class="seller-layout-grid">
-  <div class="seller-product-list">
-    <md-list>
-      <h3 md-subheader>Folders</h3>
-      <md-list-item *ngFor="let folder of folders">
-        <md-icon md-list-avatar>folder</md-icon>
-        <h4 md-line>{{folder.name}}</h4>
-        <p md-line> {{folder.updated | date}} </p>
-      </md-list-item>
-      <md-divider></md-divider>
-      <h3 md-subheader>Notes</h3>
-      <md-list-item *ngFor="let note of notes">
-        <md-icon md-list-avatar>note</md-icon>
-        <h4 md-line>{{note.name}}</h4>
-        <p md-line> {{note.updated | date}} </p>
-      </md-list-item>
-    </md-list>
-  </div>
-
-  <div class="seller-selected-product">
-    <ul>
-      <li *ngFor="let product of getProducts()">
-        <app-product [product]="product"></app-product>
-      </li>
-    </ul>
-  </div>
-
-  <div class="seller-edit-product">
-    <div *ngIf="productSelected" >
-      <app-product [product]="product" [edit]="true"></app-product>
+    <div class="seller-product-list seller-container">
+        <md-list>
+            <h3 md-subheader>Your products</h3>
+            <md-divider></md-divider>
+            <md-list-item
+                    *ngFor="let item of getProducts()"
+                    (click)="editProduct(item)"
+                    [ngClass]="{'active': product !== null && item.name == product.name}"
+            >
+                <md-icon md-list-avatar>folder</md-icon>
+                <h4 md-line>{{item.name}}</h4>
+                <p md-line> {{item.type}} </p>
+            </md-list-item>
+        </md-list>
     </div>
-  </div>
+
+    <div class="seller-selected-product seller-container">
+        <div *ngIf="product">
+            <app-product [product]="product"></app-product>
+        </div>
+    </div>
+
+    <div class="seller-edit-product seller-container">
+        <div *ngIf="productSelected">
+            <app-product [product]="product" [edit]="true"></app-product>
+        </div>
+    </div>
 </div>

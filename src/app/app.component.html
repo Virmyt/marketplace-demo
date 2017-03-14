@@ -2,19 +2,19 @@
 
 <md-grid-list cols="4" rowHeight="400px" class="app-layout">
   <md-grid-tile [colspan]="3" [rowspan]="1" [style.background]="red" class="seller-grid">
-    <app-seller>
+    <app-seller class="grid-container">
       seller block
     </app-seller>
   </md-grid-tile>
 
   <md-grid-tile [colspan]="1" [rowspan]="2" [style.background]="green" class="mobile-grid">
-    <app-mobile-app>
+    <app-mobile-app class="grid-container">
       mobile block
     </app-mobile-app>
   </md-grid-tile>
 
   <md-grid-tile [colspan]="3" [rowspan]="1" [style.background]="DDBDF1" class="backend-grid">
-    <app-backend-admin>
+    <app-backend-admin class="grid-container">
       backend block
     </app-backend-admin>
   </md-grid-tile>

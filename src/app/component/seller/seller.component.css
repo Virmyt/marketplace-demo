@@ -3,15 +3,21 @@
 }
 .seller-layout-grid {
     display: flex;
-    width: 800px;
+    align-items: center;
+    justify-content: space-around;
 }
-
+.seller-container {
+    padding-left: 20px;
+}
 .seller-product-list{
-    flex: 30;
+    width: 260px;
 }
 .seller-selected-product{
-    flex: 30;
+    /*flex: 30;*/
 }
 .seller-edit-product {
-    flex: 40;
+    /*flex: 40;*/
+}
+.active {
+    background-color: lightyellow;
 }
