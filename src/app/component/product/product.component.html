@@ -1,4 +1,4 @@
-<div *ngIf="edit" layout="column">
+<div *ngIf="edit || isNew" layout="column">
 
     <md-input-container class="full-width">
         <input mdInput placeholder="Name" [(ngModel)]="product.name" name="name">
@@ -7,7 +7,8 @@
         <input mdInput placeholder="Price" [(ngModel)]="product.price">
     </md-input-container>
 
-    <img width="70px" height="70px" alt="" src="{{product.image}}" /> <md-select [(ngModel)]="product.image">
+    <img width="70px" height="70px" alt="" src="{{product.image}}" />
+    <md-select [(ngModel)]="product.image"  placeholder="Product image" >
         <md-option [value]="image" *ngFor="let image of getImages()">
             <!--<img src="{{ image }}" />-->
             <div layout="row" style="width:70px;height:70px;margin-left:10px;padding-top:5px;">
@@ -18,7 +19,7 @@
     </md-select>
 
     <md-input-container>
-        <input mdInput placeholder="State" [mdAutocomplete]="auto" [(ngModel)]="product.type">
+        <input mdInput placeholder="Product type" [mdAutocomplete]="auto" [(ngModel)]="product.type">
     </md-input-container>
 
     <md-autocomplete #auto="mdAutocomplete">
@@ -31,7 +32,7 @@
 
 
 </div>
-<div *ngIf="!edit">
+<div *ngIf="!edit && !isNew">
     <md-card class="example-card">
         <md-card-header>
             <div md-card-avatar class="example-header-image"></div>

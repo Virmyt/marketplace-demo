@@ -1,25 +1,42 @@
 <div class="seller-layout-grid">
     <div class="seller-product-list seller-container">
         <md-list>
-            <h3 md-subheader>Your products</h3>
+            <div style="flex-direction: row">
+                <h3
+                        md-subheader
+                        *ngFor="let tab of tabs"
+                        [ngClass]="{'active': activeTab == tab}"
+                        style="width: 120px; display: inline-block"
+                        (click)="activeTab = tab"
+                >{{tab}}</h3>
+            </div>
             <md-divider></md-divider>
-            <md-list-item (click)="addProduct()">
-                <h4 md-line>Add new</h4>
-            </md-list-item>
-            <md-list-item
-                    *ngFor="let item of getProducts()"
-                    (click)="selectProduct(item)"
-                    [ngClass]="{'active': product !== null && item.name == product.name}"
-            >
-                <md-icon md-list-avatar>folder</md-icon>
-                <h4 md-line>{{item.name}}</h4>
-                <p md-line> {{item.type}} </p>
-            </md-list-item>
+
+            <div *ngIf="activeTab == 'Delivery area'">
+
+            </div>
+
+            <div *ngIf="activeTab == 'Your products'">
+                <md-list-item (click)="addProduct()">
+                    <h4 md-line>Add new</h4>
+                </md-list-item>
+                <md-list-item
+                        *ngFor="let item of getProducts()"
+                        (click)="selectProduct(item)"
+                        [ngClass]="{'active': product !== null && item.name == product.name}"
+                        style="cursor: pointer;"
+                >
+                    <md-icon md-list-avatar><img src="{{item.image}}" alt="" width="30px" height="30px"></md-icon>
+                    <h4 md-line>{{item.name}}</h4>
+                    <p md-line> {{item.type}} </p>
+                </md-list-item>
+            </div>
+
         </md-list>
     </div>
 
-    <div class="seller-selected-product seller-container">
-        <div *ngIf="product">
+    <div class="seller-selected-product seller-container" *ngIf="product && activeTab == 'Your products'">
+        <div >
             <app-product [product]="product" [isNew]="edit"></app-product>
         </div>
     </div>

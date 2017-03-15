@@ -12,6 +12,9 @@ export class SellerComponent implements OnInit {
 
   product: Product = null;
   edit: boolean = false;
+
+  tabs = ['Your products', 'Delivery area'];
+  activeTab: string = this.tabs[0];
   constructor(
       private productProvider: ProductProviderService
   ) { }
@@ -24,16 +27,11 @@ export class SellerComponent implements OnInit {
 
   selectProduct = (product: Product) => {
     this.product = product;
+    this.edit = false;
   };
   addProduct = () => {
+    this.edit = true;
     this.product = new Product();
-    this.edit = true;
-  };
-
-  editProduct = (product: Product) => {
-    // this.product = this.productProvider.products.find((product: Product) => product.name === name);
-    this.product = product;
-    this.edit = true;
   };
 
   newProduct = () => this.product = new Product();

@@ -11,14 +11,17 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product = new Product();
 
-  edit: boolean = false;
   @Input() isNew: boolean = false;
+  edit: boolean = this.isNew;
 
   constructor(
       private productProvider: ProductProviderService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
+    debugger;
+
   }
 
   editProduct = (product: Product) => {
