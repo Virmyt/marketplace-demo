@@ -1,3 +1,32 @@
-<p>
-  backend-admin works!
-</p>
+<div class="backend-layout">
+    <div class="orders-list">
+        <md-list>
+            <md-list-item *ngFor="let order of getOrders">
+                <div class="order-row">
+                    <div class="id">
+                        {{order.orderId}}
+                    </div>
+                    <div class="username">
+                        {{order.client.username}}
+                    </div>
+                    <div class="client-address">
+                        {{order.client.address}}
+                    </div>
+                    <div class="product-name">
+                        {{order.product.name}}
+                    </div>
+                    <div class="product-type">
+                        {{order.product.type}}
+                    </div>
+                    <div class="product-price">
+                        {{order.product.price}}
+                    </div>
+                </div>
+            </md-list-item>
+        </md-list>
+
+    </div>
+    <div class="sum" style="right: 50px;position: absolute;" *ngIf="getSum > 0">
+        <b>Total: {{getSum}}</b>
+    </div>
+</div>

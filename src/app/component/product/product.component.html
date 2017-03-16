@@ -49,7 +49,8 @@
             <h4>Price: {{product.price | currency}}</h4>
         </md-card-content>
         <md-card-actions>
-            <button md-button (click)="editProduct(product)">EDIT</button>
+            <button *ngIf="!client" md-button (click)="editProduct(product)">EDIT</button>
+            <button *ngIf="client" md-button (click)="buyProduct(product, client)">Buy</button>
         </md-card-actions>
     </md-card>
 </div>

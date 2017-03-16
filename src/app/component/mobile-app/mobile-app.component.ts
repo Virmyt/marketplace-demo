@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ProductProviderService} from "../../service/product-provider.service";
 import {Product} from "../../entity/product";
+import {Client} from "../../entity/client";
 
 @Component({
     selector: 'app-mobile-app',
@@ -14,7 +15,7 @@ export class MobileAppComponent implements OnInit {
 
     ngOnInit() {
     }
-
+    client = new Client('John Smith', 'New York');
     selectedPets: string[] = [];
     petsSelected = (pets) => {
         this.selectedPets = pets;

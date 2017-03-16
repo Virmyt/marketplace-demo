@@ -1,0 +1,7 @@
+.order-row {
+    width: 600px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+
+}

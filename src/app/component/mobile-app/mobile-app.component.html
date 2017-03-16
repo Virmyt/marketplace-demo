@@ -12,7 +12,7 @@
             </div>
             <div class="mobile-products">
                 <div class="product-card-container" *ngFor="let product of availableProducts">
-                    <app-product [product]="product" [isNew]="edit"></app-product>
+                    <app-product [product]="product" [client]="client"></app-product>
                 </div>
             </div>
         </div>

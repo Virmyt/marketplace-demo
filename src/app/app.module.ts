@@ -14,6 +14,7 @@ import { RegionComponent } from './component/region/region.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { PetTypesComponent } from './component/pet-types/pet-types.component';
 import {ProductProviderService} from "./service/product-provider.service";
+import {OrderProviderService} from "./service/order-provider.service";
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {ProductProviderService} from "./service/product-provider.service";
       apiKey: 'AIzaSyAqOQbNeIpZht7tl0bpInV7lrzRHSl0VtU'
     })
   ],
-  providers: [ProductProviderService],
+  providers: [ProductProviderService, OrderProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
