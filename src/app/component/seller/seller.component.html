@@ -1,4 +1,4 @@
-<div class="seller-layout-grid">
+<div class="seller-layout-grid" style="flex: auto">
     <div class="seller-product-list seller-container">
         <md-list>
             <div style="flex-direction: row">
@@ -13,7 +13,17 @@
             <md-divider></md-divider>
 
             <div *ngIf="activeTab == 'Delivery area'">
-
+                <md-list-item (click)="addRegion()">
+                    <h4 md-line>Add new</h4>
+                </md-list-item>
+                <md-list-item
+                        *ngFor="let item of getRegions()"
+                        (click)="selectRegion(item)"
+                        [ngClass]="{'active': region !== null && item.name == region.name}"
+                        style="cursor: pointer;"
+                >
+                    <h4 md-line>{{item.name}}</h4>
+                </md-list-item>
             </div>
 
             <div *ngIf="activeTab == 'Your products'">
@@ -38,6 +48,12 @@
     <div class="seller-selected-product seller-container" *ngIf="product && activeTab == 'Your products'">
         <div >
             <app-product [product]="product" [isNew]="edit"></app-product>
+        </div>
+    </div>
+
+    <div class="seller-region seller-container" style="flex: 70; width: 400px" *ngIf="activeTab == 'Delivery area'">
+        <div >
+            <app-region></app-region>
         </div>
     </div>
 </div>

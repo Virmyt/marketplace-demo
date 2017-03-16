@@ -10,6 +10,8 @@ import { SellerComponent } from './component/seller/seller.component';
 import { BackendAdminComponent } from './component/backend-admin/backend-admin.component';
 import { MobileAppComponent } from './component/mobile-app/mobile-app.component';
 import { ProductComponent } from './component/product/product.component';
+import { RegionComponent } from './component/region/region.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,18 @@ import { ProductComponent } from './component/product/product.component';
     SellerComponent,
     BackendAdminComponent,
     MobileAppComponent,
-    ProductComponent
+    ProductComponent,
+    RegionComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAqOQbNeIpZht7tl0bpInV7lrzRHSl0VtU'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
