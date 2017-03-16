@@ -12,6 +12,9 @@ import { MobileAppComponent } from './component/mobile-app/mobile-app.component'
 import { ProductComponent } from './component/product/product.component';
 import { RegionComponent } from './component/region/region.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { PetTypesComponent } from './component/pet-types/pet-types.component';
+import {ProductProviderService} from "./service/product-provider.service";
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     BackendAdminComponent,
     MobileAppComponent,
     ProductComponent,
-    RegionComponent
+    RegionComponent,
+    PetTypesComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
       apiKey: 'AIzaSyAqOQbNeIpZht7tl0bpInV7lrzRHSl0VtU'
     })
   ],
-  providers: [],
+  providers: [ProductProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

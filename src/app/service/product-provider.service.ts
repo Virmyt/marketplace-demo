@@ -23,10 +23,6 @@ export class ProductProviderService {
       (-1 !== index) ? (this.products[index] = product) : this.products.push(product);
     }
   };
-  getImages = () => {
-    console.log(1);
-    let ar = this.imageNames.map(imageName => '/assets/images/products/' + imageName + '.jpg');
-    return ar;
-  }
+  getImages = () => this.imageNames.map(imageName => '/assets/images/products/' + imageName + '.jpg');
 
 }

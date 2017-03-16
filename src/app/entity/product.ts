@@ -4,8 +4,7 @@ export class Product {
         this.type = type;
         this.price = price;
         this.image = image;
-        this.petCategories = petCategories;
-
+        this.petCategories = petCategories || [];
     }
     name: string;
     type: string;

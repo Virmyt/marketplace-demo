@@ -1,0 +1,16 @@
+<div class="pet-seletor-container">
+<md-card>
+  <md-card-content>
+    <h3 >Select pet types</h3>
+    <section class="pet-types">
+      <md-checkbox
+              *ngFor="let pet of pets"
+              [(ngModel)]="activePets[pet]"
+              [checked]="isSelected(pet)"
+              (change)="onClick()"
+      >{{pet}}</md-checkbox>
+    </section>
+  </md-card-content>
+</md-card>
+
+</div>

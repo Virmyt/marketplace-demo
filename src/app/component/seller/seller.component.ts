@@ -8,7 +8,7 @@ import {Region} from "../../entity/region";
   selector: 'app-seller',
   templateUrl: 'seller.component.html',
   styleUrls: ['seller.component.css'],
-  providers: [ProductProviderService, RegionProviderService]
+  providers: [RegionProviderService]
 })
 export class SellerComponent implements OnInit {
 

@@ -6,6 +6,8 @@
     <md-input-container class="full-width">
         <input mdInput placeholder="Price" [(ngModel)]="product.price">
     </md-input-container>
+    <app-pet-types (petSelected)="petsSelected($event)" [selectedPets]="product.petCategories"></app-pet-types>
+
 
     <img width="70px" height="70px" alt="" src="{{product.image}}" />
     <md-select [(ngModel)]="product.image"  placeholder="Product image" >

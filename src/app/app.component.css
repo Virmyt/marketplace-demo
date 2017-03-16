@@ -11,6 +11,7 @@
 }
 md-grid-list .grid-container{
     align-self: flex-start;
+    position: relative;
 }
 
 .mobile-grid {
@@ -21,3 +22,5 @@ md-grid-list .grid-container{
 .cdk-overlay-container {
     position: absolute;
 }
+
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';

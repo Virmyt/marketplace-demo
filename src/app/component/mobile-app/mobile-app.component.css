@@ -1,0 +1,10 @@
+.mobile-products {
+    position: fixed;
+    width: 320px;
+    max-height: 460px;
+    overflow: overlay;
+    color: #4816a0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

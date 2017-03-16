@@ -1,3 +1,23 @@
-<p>
-  mobile-app works!
-</p>
+<div class="mobile-layout-grid" style="">
+
+    <div class="marvel-device s5 white">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="camera"></div>
+        <div class="sensor"></div>
+        <div class="speaker"></div>
+        <div class="screen">
+            <div class="content" style="color: black;">
+                <app-pet-types (petSelected)="petsSelected($event)" [selectedPets]="selectedPets"></app-pet-types>
+            </div>
+            <div class="mobile-products">
+                <div class="product-card-container" *ngFor="let product of availableProducts">
+                    <app-product [product]="product" [isNew]="edit"></app-product>
+                </div>
+            </div>
+        </div>
+        <div class="home"></div>
+    </div>
+
+
+</div>

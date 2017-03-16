@@ -5,7 +5,8 @@ import {ProductProviderService} from "../../service/product-provider.service";
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
+  providers: []
 })
 export class ProductComponent implements OnInit {
 
@@ -22,6 +23,10 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  petsSelected = (pets) => {
+    this.product.petCategories = pets;
+  };
 
   editProduct = (product: Product) => {
     this.product = product;
