@@ -1,7 +1,14 @@
 <div class="backend-layout">
     <div class="orders-list">
         <md-list>
-            <md-list-item *ngFor="let order of getOrders">
+            <md-list-item
+                    *ngFor="let order of getOrders"
+                    style="
+                        border-bottom: #4816a0;
+                        border-radius: 1px;
+                        border-style: outset;
+                    "
+            >
                 <div class="order-row">
                     <div class="id">
                         {{order.orderId}}
@@ -27,6 +34,6 @@
 
     </div>
     <div class="sum" style="right: 50px;position: absolute;" *ngIf="getSum > 0">
-        <b>Total: {{getSum}}</b>
+        <b>Total: {{getSum | currency}}</b>
     </div>
 </div>

@@ -1,13 +1,16 @@
-<span>Marketplace</span>
-<md-grid-list cols="3" rowHeight="400px" class="app-layout">
-  <md-grid-tile [colspan]="2" [rowspan]="1" [style.background]="red" class="seller-grid">
-    <app-seller class="grid-container">
+<md-grid-list cols="3" rowHeight="280px" class="app-layout">
+  <md-grid-tile [colspan]="2" [rowspan]="2" [style.justify-content]="flex-start" class="seller-grid">
+    <app-seller class="grid-container" style="
+        margin-top: 5px;
+        border-top: #531fb1;
+        border-style: inset;
+    ">
       seller block
     </app-seller>
   </md-grid-tile>
 
-  <md-grid-tile [colspan]="1" [rowspan]="2" [style.background]="green" class="mobile-grid">
-    <app-mobile-app class="grid-container">
+  <md-grid-tile [colspan]="1" [rowspan]="3" [style.background]="green" class="mobile-grid">
+    <app-mobile-app class="grid-container" style="margin-top: 20px">
       mobile block
     </app-mobile-app>
   </md-grid-tile>

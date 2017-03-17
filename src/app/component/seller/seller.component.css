@@ -3,7 +3,7 @@
 }
 .seller-layout-grid {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-start;
 }
 .seller-container {
