@@ -21,7 +21,7 @@ export class BackendAdminComponent implements OnInit {
 
     get getSum(): number  {
         let result: number = 0;
-        this.orderProvider.orders.forEach((val) => result += Number.parseFloat(val.product.price));
+        this.orderProvider.orders.forEach((val) => result += Number.parseFloat(val.product.price.toString()));
         return result;
     }
 }
