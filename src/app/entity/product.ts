@@ -2,7 +2,7 @@ export class Product {
     constructor(name?, type?, price?, image?, petCategories?) {
         this.name = name;
         this.type = type;
-        this.price = price;
+        this.price = Number.parseFloat(price);
         this.image = image;
         this.petCategories = petCategories || [];
     }

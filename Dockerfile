@@ -15,5 +15,6 @@ EXPOSE 8060
 WORKDIR /var/www/project/
 
 
-#docker run -v /home/artem/www/petcube-marketplace:/var/www/project -p 8060:8060 marketplace-front
+#docker run --name market -v /vagrant/marketplace:/var/www/project -p 8060:8060 marketplace-front && docker start market
 # ng serve --host 0.0.0.0 --port 8060 --live-reload-port 49153
+

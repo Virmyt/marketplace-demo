@@ -20,8 +20,8 @@ export class BackendAdminComponent implements OnInit {
     }
 
     get getSum(): number  {
-        let result = 0;
-        this.orderProvider.orders.forEach((val) => result += val.product.price );
+        let result: number = 0;
+        this.orderProvider.orders.forEach((val) => result += Number.parseFloat(val.product.price));
         return result;
     }
 }
